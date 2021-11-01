@@ -10,7 +10,6 @@
 	box-sizing: border-box;
 	transition: .1s;
 	min-width: 8rem;
-
 }
 
 .button:hover,
@@ -22,6 +21,4 @@
 .button:disabled{
 	opacity: 0.5;
 	cursor: wait;
-
-
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const Error = ({error}) => {
+const Error = ({error}) => {
 
     if(!error) return null;
     return (
@@ -9,3 +9,5 @@ export const Error = ({error}) => {
         </p>
     )
 }
+
+export default Error

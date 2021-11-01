@@ -15,12 +15,12 @@ const useFetch = () => {
       json = await response.json();
       if (response.ok === false) throw new Error(json.message);
     } catch (err) {
-        json = null;
+      json = null;
       setError(err.message);
     } finally {
       setData(json);
       setLoading(false);
-      return {response, json}
+      return { response, json };
     }
   }, []);
 

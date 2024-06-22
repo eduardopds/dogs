@@ -1,15 +1,24 @@
 import React from "react";
 import UserHeader from "./UserHeader";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import Feed from "../Feed/Feed";
 import UserPhotoPost from "./UserPhotoPost";
 import UserStats from "./UserStats";
-import { UserContext } from "../../UserContext";
 import NotFound from "../NotFound";
 import Head from "../Helper/Head";
+import { useSelector } from "react-redux";
 
 const User = () => {
-  const { data } = React.useContext(UserContext);
+  const { data } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (!data) {
+      navigate("/login");
+    }
+  }, [data, navigate]);
+
+  if (!data) return null;
 
   return (
     <section className="container">
